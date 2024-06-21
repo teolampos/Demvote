@@ -1,20 +1,15 @@
 import React from "react";
 import Image from "next/image";
-import { Roboto } from "next/font/google";
+import { roboto } from "./_lib/fonts";
 import Link from "next/link";
-import UseCaseCard from "./UseCaseCard";
-
-const roboto = Roboto({
-  weight: "500",
-  subsets: ["latin"],
-});
+import UseCaseCard from "./_components/homepage/UseCaseCard";
 
 const HomePage = () => {
   return (
     <>
       {/* FIRST SECTION*/}
       <div
-        className={` min-w-full min-h-[70vh]  bg-white py-5 md:py-7 px-7   ${roboto.className}`}
+        className={` min-w-full min-h-[70vh]  bg-white py-5 md:py-7 px-7 md:px-10   ${roboto.className}`}
       >
         <div className="flex flex-row justify-between ">
           <div className="flex flex-row items-center gap-1">
@@ -33,13 +28,13 @@ const HomePage = () => {
           <div className="flex flex-row items-center">
             <div className={`flex flex-row gap-2 md:gap-3  tracking-tight`}>
               <Link
-                href={"/"}
+                href={"/login"}
                 className="text-xs md:text-md lg:text-lg text-blue-700  border border-solid border-blue-700 rounded-[4px] px-2  py-1.5 hover:text-white hover:bg-blue-700 transition  active:bg-white active:text-blue-700 "
               >
                 Sign In
               </Link>
               <Link
-                href={"/"}
+                href={"/sign-up"}
                 className="text-xs md:text-md lg:text-lg text-slate-100 bg-blue-700 border border-solid border-blue-700 rounded-[4px] px-3 py-1.5 hover:bg-white hover:text-blue-700 active:bg-blue-700 active:text-white transition"
               >
                 Get Started
@@ -69,7 +64,7 @@ const HomePage = () => {
             </p>
 
             <Link
-              href={"/"}
+              href={"/sign-up"}
               className={`max-w-[110px] p-10 text-slate-100 bg-blue-700 border border-solid border-blue-700 rounded-[4px] px-3 py-1.5 hover:bg-white hover:text-blue-700 active:bg-blue-700 active:text-white transition `}
             >
               Get Started
@@ -146,7 +141,7 @@ const HomePage = () => {
                 text: "Organizations, clubs, and associations can use Demvote to elect board members and make key organizational decisions.",
               },
             ]}
-            src="/companyIcon.png"
+            src="/company.png"
             alt=""
           />
           <UseCaseCard

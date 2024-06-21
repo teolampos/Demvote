@@ -14,7 +14,7 @@ interface Props {
 const UseCaseCard = ({ title, subUseCases, src, alt }: Props) => {
   return (
     <>
-      <div className=" p-7 rounded-lg bg-gray-900 flex flex-col gap-4 transition-all ease-linear hover:scale-[97%] cursor-pointer">
+      <div className=" p-7 rounded-lg bg-gray-900 flex flex-col gap-4 transition-all ease-linear hover:scale-[97%] ">
         <div className="text-2xl md:text-3xl text-white flex flex-row  items-center gap-4 ">
           <span>{title}</span>
           <Image
