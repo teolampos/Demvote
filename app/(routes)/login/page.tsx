@@ -8,6 +8,7 @@ import { useFormState } from "react-dom";
 import { loginUser } from "@/app/_lib/actions";
 import { ButtonTypeEnum } from "@/app/_lib/entities";
 import { useState } from "react";
+import Logo from "@/app/_components/shared/Logo";
 
 const SignUp = () => {
   const [show, setShow] = useState(false);
@@ -19,18 +20,7 @@ const SignUp = () => {
         <div
           className={`flex flex-col  gap-2 py-7 px-7 md:px-10 w-screen lg:min-w-[45%] ${roboto.className}`}
         >
-          <div className="flex flex-row items-center gap-1">
-            <Image src="/ballotBox.png" alt="Demvote" width={25} height={25} />
-            <div>
-              <Link
-                href={"/"}
-                className={`md:text-2xl font-bold  text-gray-900 `}
-              >
-                demvote.
-              </Link>
-              <span className="md:text-2xl text-blue-950">com</span>
-            </div>
-          </div>
+          <Logo />
 
           <h1 className="mt-10 text-2xl md:text-3xl text-gray-900 font-bold text-justify">
             Sign In

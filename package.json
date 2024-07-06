@@ -10,10 +10,12 @@
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "chart.js": "^4.4.3",
     "jose": "^5.4.1",
     "next": "14.2.4",
     "pg": "^8.12.0",
     "react": "^18",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "zod": "^3.23.8"
   },
@@ -24,6 +26,7 @@
     "@types/pg": "^8.11.6",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "daisyui": "^4.12.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
