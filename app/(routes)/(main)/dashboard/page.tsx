@@ -416,7 +416,7 @@ const Dashboard = () => {
                     <Link
                       href={`/poll/${poll.id}?location=dashboard`}
                       key={`${poll.id}_poll`}
-                      className={`w-[90%] p-3 md:p-2 bg-slate-100  rounded-md cursor-pointer transition-all duration-100 hover:scale-[0.98] hover:bg-blue-100 `}
+                      className={`text-xs w-[80%] sm:w-[90%] sm:text-sm p-3 sm:p-2 bg-slate-100  rounded-md cursor-pointer transition-all duration-100 hover:scale-[0.98] hover:bg-blue-100 `}
                     >
                       <div>
                         <h1 className="text-md md:text-xl max-w-2/5 whitespace-nowrap overflow-hidden text-ellipsis font-bold flex justify-between">
