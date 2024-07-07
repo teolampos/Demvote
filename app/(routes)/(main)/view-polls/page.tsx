@@ -150,7 +150,7 @@ const ActivePolls = () => {
                   <Link
                     href={`/poll/${poll.id}?location=view-polls`}
                     key={`${poll.id}_poll`}
-                    className={`md:max-w-[40%] p-3 bg-white shadow-[2px_3px_20px_lightgray] rounded-md cursor-pointer transition-all duration-100 hover:scale-[0.97]  hover:bg-blue-100 `}
+                    className={` md:max-w-[40%] p-3 bg-white shadow-[2px_3px_20px_lightgray] rounded-md cursor-pointer transition-all duration-100 hover:scale-[0.97]  hover:bg-blue-100 `}
                   >
                     <div>
                       <h1 className="text-md sm:text-xl font-bold flex justify-between">
@@ -166,7 +166,7 @@ const ActivePolls = () => {
                     <h3 className="text-sm sm:text-lg max-w-2/5 whitespace-nowrap oveflow-hidden truncate">
                       {poll.description}
                     </h3>
-                    <div className="flex items-center gap-2 justify-between ">
+                    <div className="flex flex-col justify-start items-start mt-1.5 sm:flex-row sm:items-center sm:gap-2 sm:justify-between ">
                       <div className="flex items-center gap-2 justify-start ">
                         <span className="text-xs sm:text-md font-bold ">
                           Type:

@@ -6,7 +6,7 @@ import {
 } from "@/app/_lib/actions";
 import { Option, PollTypeEnum } from "@/app/_lib/entities";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Dashboard = () => {
   const [pollTitle, setPollTitle] = useState("");
@@ -28,6 +28,7 @@ const Dashboard = () => {
   const [showMore, setShowMore] = useState(false);
   const [limit, setLimit] = useState(5);
   const [offset, setOffset] = useState(0);
+  const modalRef = useRef<any>(null);
 
   const handleAddOption = (e: any) => {
     if (option) {
@@ -126,9 +127,7 @@ const Dashboard = () => {
         <div>
           <button
             className="flex items-center gap-0.5 sm:gap-1.5 p-1.5 lg:mr-14 bg-green-600 rounded-md font-semibold hover:bg-green-400 "
-            onClick={() =>
-              (document.getElementById("my_modal_1") as any)?.showModal()
-            }
+            onClick={() => modalRef.current.showModal()}
           >
             <svg
               className="w-3 h-3 sm:w-5 sm:h-5 md:w-7 md:h-7 text-white dark:text-white"
@@ -151,7 +150,7 @@ const Dashboard = () => {
               New Poll
             </span>
           </button>
-          <dialog id="my_modal_1" className="modal ">
+          <dialog id="my_modal_1" className="modal " ref={modalRef}>
             <div className="modal-box min-w-[90%] min-h-[90vh] sm:min-h-[95vh] relative  ">
               <h3 className="font-bold text-lg sm:text-3xl text-gray-900">
                 Create a new poll
@@ -417,7 +416,7 @@ const Dashboard = () => {
                     <Link
                       href={`/poll/${poll.id}?location=dashboard`}
                       key={`${poll.id}_poll`}
-                      className={`w-[90%] md:w-[90%] p-3 md:p-2 bg-slate-100  rounded-md cursor-pointer transition-all duration-100 hover:scale-[0.98] hover:bg-blue-100 `}
+                      className={`w-[90%] p-3 md:p-2 bg-slate-100  rounded-md cursor-pointer transition-all duration-100 hover:scale-[0.98] hover:bg-blue-100 `}
                     >
                       <div>
                         <h1 className="text-md md:text-xl max-w-2/5 whitespace-nowrap overflow-hidden text-ellipsis font-bold flex justify-between">
@@ -433,8 +432,8 @@ const Dashboard = () => {
                       <h3 className="text-sm md:text-lg max-w-2/5 whitespace-nowrap oveflow-hidden truncate">
                         {poll.description}
                       </h3>
-                      <div className="flex items-center gap-2 justify-between ">
-                        <div className="flex items-center gap-2 justify-start ">
+                      <div className="flex flex-col flex-start items-start mt-1.5  sm:gap-2 sm:flex-row sm:justify-between sm:items-center">
+                        <div className="flex  items-center gap-2 justify-start ">
                           <span className="text-xs md:text-md font-bold ">
                             Type:
                           </span>
