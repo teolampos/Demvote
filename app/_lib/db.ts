@@ -9,7 +9,7 @@ export const pool = new Pool({
   host: process.env.PGHOST,
   port: Number(process.env.PGPORT),
   database: process.env.PGDATABASE,
-  ssl: true,
+  ssl: process.env.ENV === "PROD" ? true : false,
 });
 
 export async function getUserById(userId: number) {
